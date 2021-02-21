@@ -1,0 +1,69 @@
+<html>
+<title>EMPLOYEE REGISTER</title>
+<head>
+<header><u>EMPLOYEE REGISTER</u></header>
+<style type="text/css">
+body{background-image: url('busback.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;}
+  h3{color:black;text-align:center;font-family:arial;size:20px;}
+header{text-align:center;font-size:20px;}
+form{color:black;text-align:center;font-family:arial;size:20px;}
+</style>
+<script>
+function registerValidate(){
+
+
+            // var pn = documnet.getElementById('pid').value;
+            // alert(pn);
+
+            var pw = document.getElementById('pwid').value;
+           
+            var cpw = document.getElementById('cpid').value;
+
+            if(uname.length >= 5){
+            }else{
+                alert("Username must consist of 5 letters");
+                document.getElementById('uid').focus();
+                return false;
+            }
+            if(pw.length >= 5){
+            }else{
+                alert("Password must consist of 5 letters");
+                document.getElementById('pwid').focus();
+                return false;
+            }
+            if(cpw != pw){
+                alert("Confirm passward and password must be same.");
+                document.getElementById('cpid').focus();
+                return false;
+            }
+            if(email.match(mailformat)){
+                alert("email is:"+email);
+            }else{
+                alert("Please enter a valid email");
+                document.getElementById('eid');
+                return false;
+            }
+            // return true;
+        }
+    </script>
+</head>
+<body>
+<h3>
+<img src="C:\Users\susha\eclipse-workspace\New folder\LMS\WebContent\emp.jpg" width=15%>
+<form method='post' onsubmit="return registerValidate()" action="EmpRegister">
+<br>Empid: <input type="text" name='empid' id='eid' value="" required="required"></br>
+<br>EmpName: <input type="text" name="ename" id="uid" value="" ></br>
+<br>Salary: <input type="text" name="salary" id='sal' value="" ></br>
+<br>Department:<input type="text" name="dept" id="dept" value=""></br>
+<br>Address:<input type="text" name="add" id="add" value=""></br>
+<br>Mobile (+91xxxxxxxxx):<input type="tel" name="mobile" id="pid" pattern="^([0]|\+91)?[6789]\d{9}$" value="" required="required"></br>
+<br>Password: <input type="password" name="pword" id="pwid" value="" required="required"></br>
+<br>Confirm Password:<input type="password" name="pword" id="cpid" value="" required="required"></br>
+<br><input type="submit" value="REGISTER"></br>
+</form>
+</h3>
+</body>
+</html>

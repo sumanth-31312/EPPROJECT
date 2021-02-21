@@ -1,0 +1,159 @@
+<html>
+<title>LMS Register Page</title>
+<head><br>
+<header style="font-size: 30px;"><u>LEARNING MANAGEMENT SYSTEM</u></header>
+<style type="text/css">
+body{background-image: url('lmsback.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;}
+  h3{color:black;padding-left: 640px;size:20px;}
+  h4{color:black;text-align: center;size:20px;}
+header{text-align:center;font-size:20px;}
+form{color:black;size:20px;}
+a:link, a:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  padding: 2px 30px;
+  text-align: center;
+  margin-right: 2px;
+  border-radius: 15px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: black;
+  color: white;}
+
+.wrapper{
+  width: 440px;
+  height:780px;
+  color: #000;
+  top:13%;
+  left:76%;
+  padding: 60px 30px;
+  position: absolute;
+  transform: translate(-50%);
+  box-sizing: border-box;
+   background-color:lightblue;
+   border-radius: 20px;
+  box-shadow: 10px 10px 20px;
+}
+
+.wrapper input[type=text], .wrapper input[type=password] ,.wrapper input[type=mail],.wrapper [id=state]{
+  border:none;
+  border-bottom: 1px solid #ddd;
+  background: white;
+  outline: none;
+  height: 30px;
+  width:100%;
+  border-radius: 12px;
+  color: white;
+  font-size: 15px;
+  opacity:1;
+  color:black;
+}
+</style>
+<script>
+function registerValidate(){
+            var email= document.getElementById('eid').value;
+
+            var mailformat = /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
+            var uname = document.getElementById('uid').value;
+
+            // var pn = documnet.getElementById('pid').value;
+            // alert(pn);
+
+            var pw = document.getElementById('pwid').value;
+           
+            var cpw = document.getElementById('cpid').value;
+
+            if(uname.length >= 5){
+            }else{
+                alert("Username must consist of 5 letters");
+                document.getElementById('uid').focus();
+                return false;
+            }
+            if(pw.length >= 5){
+            }else{
+                alert("Password must consist of 5 letters");
+                document.getElementById('pwid').focus();
+                return false;
+            }
+            if(cpw != pw){
+                alert("Confirm passward and password must be same.");
+                document.getElementById('cpid').focus();
+                return false;
+            }
+            if(email.match(mailformat)){
+                alert("email is:"+email);
+            }else{
+                alert("Please enter a valid email");
+                document.getElementById('eid');
+                return false;
+            }
+            // return true;
+        }
+    </script>
+</head>
+<body><h4>
+    <br><br><br>
+    <div class="slides" style="max-width:850px">
+        <img class="mySlides" src="https://tse3.mm.bing.net/th?id=OIP.ZMxo_EE-HbsuppP11ec6YgHaFQ&pid=Api&P=0&w=270&h=192" style="width:70%;height: 400px;width: 600px; margin-left:250px; ">
+        <img class="mySlides" src="https://tse3.mm.bing.net/th?id=OIP.gaE1DtjcvmSgWQJPNgvuRwHaFF&pid=Api&P=0&w=279&h=192" style="width:70%;height: 400px;width: 600px; margin-left:250px;">
+        <img class="mySlides" src="https://tse4.mm.bing.net/th?id=OIP.cMrs8_vbm5bkGTtK4j6RIwHaDE&pid=Api&P=0&w=415&h=173" style="width:70%;height: 400px;width: 600px; margin-left:250px">
+        <img class="mySlides" src="https://tse4.mm.bing.net/th?id=OIP.cKmLA9BIXU1cBa8rDkIrIAHaFJ&pid=Api&P=0&w=277&h=193" style="width:70%;height: 400px;width: 600px; margin-left:250px">
+        <img class="mySlides" src="https://tse3.mm.bing.net/th?id=OIP.CObPIGzTUb4GKXZoD_XpoQHaDl&pid=Api&P=0&w=344&h=167" style="width:70% ;height: 400px;width: 600px; margin-left:250px">
+ <img class="mySlides" src="https://tse1.mm.bing.net/th?id=OIP.0EC88geVwzn7qSaC2SJjzwHaD-&pid=Api&P=0&w=318&h=171" style="width:70% ;height: 400px;width: 600px; margin-left:250px">
+<img class="mySlides" src="https://tse1.mm.bing.net/th?id=OIP.hBoU-yxbRCU9pLVn3PgtZQHaE8&pid=Api&P=0&w=261&h=175" style="width:70% ; height: 400px;width:600px;margin-left:250px">
+    </div>
+
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 1500);
+        }
+    </script></h4>
+<h3>
+<div class="wrapper">
+<header><u>SIGN-UP PAGE</u></header>
+
+<form method='post' onsubmit="return registerValidate()" action="RegisterJDBC" >
+EMAIL: <input type="mail" placeholder="Enter Email" name='email' id='eid' value="" required="required"></br>
+<br>USERNAME: <input type="text" placeholder="Enter Username" name="uname" id="uid" value="" ></br>
+<br>NAME: <input type="text" placeholder="Enter First Name" name="firstname" id='fname' value="" ></br>
+<br>MOBILE: <input type="text" name="number" placeholder="+91xxxxxxxxxx" id="pid" pattern="^([0]|\+91)?[6789]\d{9}$" value="" required="required"></br>
+<br>PASSWORD: <input type="password" placeholder="Enter Password" name="pword" id="pwid" value="" required="required"></br>
+<br>CONFIRM PASSWORD:<input type="password" placeholder="Re-Enter Password" name="pword" id="cpid" value="" required="required"></br>
+<br>Gender:
+        Male: <input type="radio" name="gender" value="male">
+        Female: <input type="radio" name="gender" value="female"></br>
+<br>
+State:<select id="state" name="state">
+            <option value="AP"> Andhra Pradesh </option>
+            <option value="TS"> Telangana </option>
+        </select></br>
+<br>
+<input type="submit" value="Register"></br>
+<br> <a href="lmslogin.html" >Go back</a></br>
+
+<h4 style="text-align: center;">
+    
+
+
+</h4>
+</form></div>
+</body>
+</html>

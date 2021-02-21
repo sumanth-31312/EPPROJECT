@@ -1,0 +1,46 @@
+<html>
+<title>EMPLOYEE LOGIN</title>
+<head>
+<header><u>EMPLOYEE LOGIN</u></header>
+<style type="text/css">
+body{background-image: url('busback.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;}
+  h3{color:black;text-align:center;font-family:arial;size:20px;}
+header{text-align:center;font-size:20px;}
+form{color:black;text-align:center;font-family:arial;size:20px;}
+</style>
+<script>
+        function validate() {
+            var uname = document.getElementById('uname').value;
+
+            var pwd = document.getElementById('pword').value;
+
+            if (uname.length >= 5) {            }
+            else {
+                alert("Username must consist of 5 letters");
+                document.getElementById('uname').focus();
+                return false;
+            }
+            if (pwd.length >= 5) {
+            } else {
+                alert("password must consist of 5 letters");
+                document.getElementById("pword").focus();
+                return false;
+            }
+return true;
+}
+</script>
+</head>
+<body>
+<h3>
+<img src="C:\Users\susha\eclipse-workspace\New folder\LMS\WebContent\emp.jpg" width=15%>
+<form method="post" onsubmit="return validate()" action="EmpLogin">
+<br>Username: <input type="text" name="uname" id="uname" value="" required="required"></br>
+<br>Password: <input type="password" name="pword" id="pword" value=""></br>
+<br><input type="submit" value="LOGIN"></br>
+</form>
+</h3>
+</body>
+</html>
